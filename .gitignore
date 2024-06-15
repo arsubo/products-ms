@@ -13,8 +13,8 @@ lerna-debug.log*
 
 .env
 
-data/
-prisma/
+/data
+/prisma
 
 # OS
 .DS_Store
