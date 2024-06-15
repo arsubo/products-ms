@@ -2,6 +2,7 @@ import { Type } from 'class-transformer';
 import {
   IsBoolean,
   IsNumber,
+  IsOptional,
   IsPositive,
   IsString,
   Min,
@@ -11,12 +12,13 @@ export class CreateProductDto {
   @IsString()
   public name: string;
 
+  @IsBoolean()
+  @IsOptional()
+  available: boolean;
+
   @IsNumber({
     maxDecimalPlaces: 4,
   })
-  @IsBoolean()
-  available: boolean;
-
   @IsPositive()
   @Min(0)
   @Type(() => Number)
